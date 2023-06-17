@@ -12,12 +12,9 @@ type Props = {
 
 function Modal({ modalOpen, setModalOpen, children }: Props) {
   return (
-    <dialog
-      id="my_modal_1"
-      className={`modal ${modalOpen ? "modal-open" : null}`}
-      >
+   <>
       {children}
-    </dialog>
+    </>
   );
 }
 

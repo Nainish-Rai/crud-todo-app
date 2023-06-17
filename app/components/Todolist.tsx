@@ -21,7 +21,7 @@ function Todolist({ tasks }: TodoListProp) {
         </thead>
         <tbody>
           {/* Data Render */}
-          {tasks.map((task, index) => {
+          {tasks.map((task) => {
             return <Task task={task} key={task.id} />;
           })}
         </tbody>

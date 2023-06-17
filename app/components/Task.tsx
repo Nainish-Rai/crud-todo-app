@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { RxCross1 } from "react-icons/Rx";
 import { FiEdit3 } from "react-icons/Fi";
 import Modal from "./Modal";
+import { todo } from "node:test";
 
 interface props {
   task: ITodo;
@@ -31,7 +32,7 @@ function Task({ task }: props) {
   };
   const handleDeleteTodo = async (id: string) => {
     await deleteTodo(id);
-
+console.log(id)
     setOpenDeleteModal(false);
     Router.refresh();
   };
@@ -48,7 +49,7 @@ function Task({ task }: props) {
         <RxCross1
           className=" text-red-500 cursor-pointer hover:scale-125 duration-200"
           size={20}
-          onClick={() => window.my_modal_3.showModal()}
+          onClick={async() => await deleteTodo(task.id)}
         />
         <Modal modalOpen={openEditModal} setModalOpen={setOpenEditModal}>
           <dialog

@@ -34,6 +34,10 @@ function AddTask() {
         Add a new task <GrFormAdd size={20} />
       </button>
       <Modal modalOpen={modalOpen} setModalOpen={setModalOpen}>
+      <dialog
+      id="my_modal_1"
+      className={`modal ${modalOpen ? "modal-open" : null}`}
+      >
         <form method="dialog" onSubmit={handleSubmitTodo} className="modal-box">
           <button
             onClick={() => setModalOpen(false)}
@@ -60,6 +64,7 @@ function AddTask() {
             Add Task
           </button>
         </form>
+        </dialog>
       </Modal>
     </div>
   );
