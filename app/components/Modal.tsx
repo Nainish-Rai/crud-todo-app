@@ -1,5 +1,8 @@
 "use client";
-import React, { FormEventHandler , useState} from "react";
+import { addTodo } from "@/api/api";
+import React, { FormEventHandler, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
+import { useRouter } from "next/navigation";
 
 type Props = {
   modalOpen: boolean;
@@ -7,11 +10,21 @@ type Props = {
 };
 
 function Modal({ modalOpen, setModalOpen }: Props) {
+  const Router = useRouter();
   const [textValue, setTextValue] = useState<string>("");
-  const handleSubmitTodo: FormEventHandler<HTMLFormElement> = (e) => {
+  const handleSubmitTodo: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault;
-    textValue && console.log(textValue)
+    textValue &&
+      (await addTodo({
+        userId: `1`,
+        id: uuidv4(),
+        title: textValue,
+        completed: false,
+      }));
+
     setTextValue("");
+    setModalOpen(false);
+    Router.refresh();
   };
   return (
     <dialog
@@ -31,7 +44,9 @@ function Modal({ modalOpen, setModalOpen }: Props) {
           placeholder="Type here"
           value={textValue}
           autoFocus={true}
-          onChange={(e)=>{setTextValue(e.target.value)}}
+          onChange={(e) => {
+            setTextValue(e.target.value);
+          }}
           className="input input-bordered shadow-md w-full max-w-xs rounded-lg my-4"
         />
         <button
