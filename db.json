@@ -2,26 +2,8 @@
   "tasks": [
     {
       "userId": "1",
-      "id": "e02db585-4684-4d14-aaf3-69881290753c",
-      "title": "nainsih",
-      "completed": false
-    },
-    {
-      "userId": "1",
-      "id": "e6fb41bb-baed-4ec5-ad65-bdc9c2f9f199",
-      "title": "nainishrai",
-      "completed": false
-    },
-    {
-      "userId": "1",
-      "id": "d5237838-b722-47db-9722-b4779e6f135f",
-      "title": "go to gym",
-      "completed": false
-    },
-    {
-      "userId": "1",
-      "id": "e30eded0-5071-4aa4-b582-4a6dab1f9e8c",
-      "title": "create a new app",
+      "id": "3649bb94-43df-4c33-acaf-48e84a201796",
+      "title": "jajaja",
       "completed": false
     }
   ]

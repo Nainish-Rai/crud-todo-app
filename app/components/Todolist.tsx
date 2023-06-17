@@ -1,38 +1,33 @@
-import { ITodo } from '@/types/todos'
-import React from 'react'
+import { ITodo } from "@/types/todos";
+import React from "react";
+import Task from "./Task";
+
 interface TodoListProp {
-    tasks:ITodo[]
+  tasks: ITodo[];
 }
 
-type Props = {}
+type Props = {};
 
-function Todolist ({tasks}: TodoListProp) {
+function Todolist({ tasks }: TodoListProp) {
   return (
-    <div className="overflow-x-auto ">
-  <table className="table">
-    {/* head */}
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      {/* Data Render */}
-      {tasks.map((task,index)=>{
-        return(
-            <tr key={task.id}>
-        <td>{task.title}</td>
-        <td>{task.completed}</td>
-      </tr>
-
-        )
-      })}
-      
-    </tbody>
-  </table>
-</div>
-  )
+    <div className="overflow-x-auto max-w-5xl mx-auto ">
+      <table className="table">
+        {/* head */}
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th className="w-[5%]">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {/* Data Render */}
+          {tasks.map((task, index) => {
+            return <Task task={task} key={task.id} />;
+          })}
+        </tbody>
+      </table>
+    </div>
+  );
 }
 
-export default Todolist
+export default Todolist;
