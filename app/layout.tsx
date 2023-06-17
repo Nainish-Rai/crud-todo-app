@@ -8,6 +8,12 @@ export const metadata = {
   description: 'Simple CRUD Todo App',
 }
 
+declare global {
+  interface Window {
+    my_modal_1:any;
+  }
+}
+
 export default function RootLayout({
   children,
 }: {

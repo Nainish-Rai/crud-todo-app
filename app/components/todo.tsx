@@ -2,10 +2,10 @@ import React from 'react'
 
 type Props = {}
 
-const todo = (props: Props) => {
+const Todo = (props: Props) => {
   return (
     <div>todo</div>
   )
 }
 
-export default todo
+export default Todo
