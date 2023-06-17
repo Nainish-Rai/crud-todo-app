@@ -44,20 +44,20 @@ console.log(id)
         <FiEdit3
           className="cursor-pointer hover:scale-125 duration-200"
           size={20}
-          onClick={() => window.my_modal_2.showModal()}
+          onClick={() => setOpenEditModal(true)}
         />
         <RxCross1
           className=" text-red-500 cursor-pointer hover:scale-125 duration-200"
           size={20}
-          onClick={async() => await deleteTodo(task.id)}
+          onClick={()=>handleDeleteTodo(task.id)}
         />
-        <Modal modalOpen={openEditModal} setModalOpen={setOpenEditModal}>
           <dialog
             id="my_modal_2"
             className={`modal ${openEditModal ? "modal-open" : null}`}
           >
             <form
               method="dialog"
+
               onSubmit={handleEditTodo}
               className="modal-box"
             >
@@ -73,6 +73,7 @@ console.log(id)
                   type="text"
                   placeholder="Type here"
                   autoFocus={true}
+                  value={newTextValue}
                   onChange={(e) => {
                     setNewTextValue(e.target.value);
                   }}
@@ -88,7 +89,6 @@ console.log(id)
               </div>
             </form>
           </dialog>
-        </Modal>
         <Modal modalOpen={openDeleteModal} setModalOpen={setOpenDeleteModal}>
           <dialog
             id="my_modal_3"
